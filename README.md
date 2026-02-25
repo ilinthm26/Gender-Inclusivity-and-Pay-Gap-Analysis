@@ -1,4 +1,4 @@
-# Workforce Diversity & Inclusion Analytics Dashboard
+# Workforce Gender Pay Gap Analytics Dashboard
 ## 📌 Project Overview
 
 This project analyzes workforce demographic and compensation data to evaluate diversity, inclusion, and pay equity across departments.
