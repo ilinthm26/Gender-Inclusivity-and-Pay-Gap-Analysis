@@ -73,9 +73,9 @@ Metrics:
 
   Gender distribution by department
 
-  Gender distribution by leadership level
-
   Leadership representation ratio
+  
+  Gender distribution by leadership level
 
 Engineered Features:
 
@@ -85,6 +85,8 @@ Engineered Features:
 
   Is_Leader (binary leadership flag)
 
+  leadeship_level
+
 
 ### 2️⃣ Pay Gap Analysis
 Average Salary by Gender
@@ -93,14 +95,19 @@ Median Salary by Gender
 
   Interpretation:
 
-  Positive → Women earn less than men
-
   Negative → Women earn more than men
 
-Department-Level Pay Gap
+  Salary Distribution
+
+  The salary distribution, as suggested by the box plot analysis, visually confirms the slightly higher median for females.
+  
+  Department-Level Pay Gap
 
 To control for role bias, salary comparison was also performed within each department.
 
+###   Additional KPIs Calulcted:
+    Promotion Metrics
+    Attrition Metrics
 ### 3️⃣ Statistical Validation
 
 To determine whether observed salary differences are significant:
