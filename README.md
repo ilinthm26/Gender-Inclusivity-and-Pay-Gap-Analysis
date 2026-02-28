@@ -1,158 +1,261 @@
-# 📊 Gender Inclusivity and Pay Gap Analysis
+# 📊 IBM Gender Inclusivity & Pay Gap Analysis
 ## 📌 Project Overview
 
-This project analyzes workforce data to evaluate gender representation, leadership inclusivity, and compensation equity within an organization.
+This project analyzes workforce data to evaluate gender representation, leadership inclusivity, compensation equity, and statistical validation of pay differences within an organization.
 
-The objective is to identify:
+The goal is to determine:
 
-  Gender distribution across departments
+Are women equally represented in the workforce?
 
-  Representation in leadership roles
+Are women equally represented in leadership?
 
-  Salary differences between genders
+Is there a measurable gender pay gap?
 
-  Statistical significance of observed pay gaps
+Are observed salary differences statistically significant?
 
-  Actionable insights for HR policy improvement
+The analysis combines:
 
-This project focuses on descriptive and diagnostic analytics using Python.
+Exploratory Data Analysis (EDA)
 
-## 🎯 Business Problem
+KPI-driven insights
 
-Organizations aim to promote gender inclusivity and ensure fair compensation practices. However, without structured data analysis, it is difficult to:
+Department-level analysis
 
-  Quantify representation gaps
+Statistical hypothesis testing
 
-  Measure pay equity
+Effect size evaluation
 
-  Identify leadership imbalances
+Interactive Streamlit dashboard
 
-  Validate whether pay differences are statistically significant
+## 📁 Dataset
 
-This analysis provides a data-driven evaluation of gender inclusivity and compensation fairness.
+Original Data Source: [IBM HR Analytics Dataset] (https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset)
 
-## 📂 Dataset
+Processed file: processed_hr_data, processed_hr_data_eda.csv
 
-This project uses the IBM HR Employee Attrition & Performance dataset from Kaggle.
+Key variables used:
 
-Dataset features:
+Gender
 
-  1,470 employee records
+MonthlyIncome
 
-  Demographics (Age, Gender, Department)
+Department
 
-  Job roles and levels
+IsLeader
 
-  Monthly income
+leadership_level
 
-  Years at company
+Attrition
 
-  Promotion indicators
+JobRole
 
-## 🛠 Tech Stack
+## 🔍 Exploratory Data Analysis (EDA)
 
-  Python
+The notebook performs:
 
-  pandas
+Workforce gender distribution
 
-  numpy
+Department-wise gender representation
 
-  matplotlib
+Leadership representation analysis
 
-  seaborn
+Salary distribution (mean & median)
 
-  scipy (statistical testing)
+Department-level pay gap
 
-  Streamlit (interactive dashboard)
+Leadership-level pay gap
 
-## 📊 Key Analysis Areas
-### 1️⃣ Gender Representation Analysis
-Metrics:
+Attrition by gender
 
-  Overall gender distribution %
 
-  Gender distribution by department
+## 📊 Key Performance Indicators (KPIs)
+1️⃣ Workforce Representation
 
-  Leadership representation ratio
-  
-  Gender distribution by leadership level
+Female Workforce %
 
-Engineered Features:
+Male Workforce %
 
-  Age_Band
+Gender Diversity Index
 
-  Tenure_Band
+2️⃣ Leadership Inclusivity
 
-  Is_Leader (binary leadership flag)
+Female Leadership %
 
-  leadeship_level
+Male Leadership %
 
 
-### 2️⃣ Pay Gap Analysis
-Average Salary by Gender
+3️⃣ Pay Gap Metrics
 
-Median Salary by Gender
+Mean Pay Gap
 
-  Interpretation:
+Median Pay Gap
 
-  Negative → Women earn more than men
+Department-Level Pay Gap
 
-  Salary Distribution
+Leadership-Level Pay Gap
 
-  The salary distribution, as suggested by the box plot analysis, visually confirms the slightly higher median for females.
-  
-  Department-Level Pay Gap
+Pay Gap Formula Used:
 
-To control for role bias, salary comparison was also performed within each department.
+(Male Average Salary − Female Average Salary) / Male Average Salary × 100
 
-###   Additional KPIs Calulcted:
-    Promotion Metrics
-    Attrition Metrics
-### 3️⃣ Statistical Validation
+Interpretation:
 
-To determine whether observed salary differences are significant:
+Positive → Gap favors males
 
-Independent T-Test
+Negative → Gap favors females
 
-  Hypothesis:
+Near zero → Pay equity
 
-  H₀: No salary difference between genders
+4️⃣ Attrition Analysis
 
-  H₁: Salary difference exists
+Overall Attrition Rate
 
-  Decision Rule:
+Female Attrition Rate
 
-  p < 0.05 → Significant difference
+Male Attrition Rate
 
-  p ≥ 0.05 → No statistically significant difference
+## 🧪 Statistical Validation
 
-## 📈 Dashboard Features
+To determine whether observed salary differences are statistically significant, an Independent Two-Sample Welch’s T-Test was performed.
 
-The interactive Streamlit dashboard includes:
+Hypothesis
 
-  Executive Summary
+H₀: No salary difference between genders
 
-  Total Employees
+H₁: Salary difference exists
 
-  Female Workforce %
+Decision Rule
 
-  Female Leadership %
+p < 0.05 → Reject H₀ (Significant difference)
 
-  Overall Pay Gap %
+p ≥ 0.05 → Fail to reject H₀ (Not significant)
 
-  Gender Representation Page
+📈 Statistical Results
 
-  Gender distribution by department
+T-Statistic: -1.2223
 
-  Leadership representation charts
+P-Value: 0.2218
 
-  Tenure vs Gender breakdown
+Cohen’s d (Effect Size): -0.065
 
-  Pay Equity Page
+Interpretation
 
-  Salary distribution (boxplots)
+p-value > 0.05 → No statistically significant salary difference
 
-  Department-wise pay gap
+Cohen’s d ≈ 0 → Practically negligible difference
 
-  Tenure vs salary scatter plot
+Negative sign → Female mean salary slightly higher
 
+### Final Statistical Conclusion
+
+The analysis does not provide evidence of a statistically or practically significant gender-based salary disparity in the dataset.
+
+## 📊 Effect Size (Cohen’s d)
+
+Effect size measures practical significance:
+
+Value	Interpretation
+0.2	Small effect
+0.5	Medium effect
+0.8	Large effect
+
+Observed: -0.065 → Negligible effect
+
+This indicates near salary parity.
+
+📈 Interactive Dashboard (Streamlit)
+
+# The project includes a fully interactive Streamlit dashboard featuring:
+
+## 🔎 Global Filters
+
+Department
+
+Leadership Level
+
+Job Role
+
+ ## 📊 Tabs
+
+Executive Summary
+
+Gender Inclusivity Analysis
+
+Pay Gap Analysis
+
+
+📉 Visualizations
+
+Pie charts
+
+Grouped bar charts
+
+Box plots
+
+Department pay gap bars
+
+Leadership pay gap analysis
+
+
+## 🛠 Technologies Used
+
+Python
+
+Pandas
+
+NumPy
+
+SciPy
+
+Plotly
+
+Streamlit
+
+Jupyter Notebook / Google Colab
+
+## 🎯 Business Insights
+
+Based on the analysis:
+
+Workforce gender distribution is balanced.
+
+Leadership representation can be monitored using pipeline metrics.
+
+No statistically significant pay gap detected.
+
+Effect size confirms minimal practical difference.
+
+Compensation appears equitable across genders in the analyzed dataset.
+
+## 📌 Future Improvements
+
+Adjusted pay gap using regression (control for department & leadership level)
+
+Logistic regression for promotion bias
+
+Time-based trend analysis
+
+Inclusion of additional diversity dimensions
+
+Confidence intervals for salary estimates
+
+## 👩‍💻 Author
+
+Ilin Thomas
+## ⭐ Why This Project Matters
+
+Gender pay equity and leadership inclusivity are critical components of organizational fairness and diversity strategy.
+
+This project demonstrates:
+
+Data cleaning & EDA
+
+KPI design
+
+Statistical hypothesis testing
+
+Effect size interpretation
+
+Interactive dashboard development
+
+Business insight communication
