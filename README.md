@@ -165,7 +165,7 @@ This indicates near salary parity.
 
 📈 Interactive Dashboard (Streamlit)
 
-# The project includes a fully interactive Streamlit dashboard featuring:
+# The project includes a fully interactive Streamlit dashboard featuring: (Run App.Py File in your local machine.)
 
 ## 🔎 Global Filters
 
